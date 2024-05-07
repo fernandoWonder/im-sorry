@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        html,body
+        {
+            font-family: 'Inter';
+        }
+        h1,p
+        {
+            color: #333;
+        }
+        h1{text-align: center;}
+        .btn
+        {
+            height: 2rem;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 6px;
+            position: absolute;
+          
+            background-color: white;
+            font-weight: 700;
+        }
+        .btn-n{
+            top: 10;
+            left: 100px;
+            background-color: #FA7070;
+            color: #fff;
+            transition: 300ms;
+        }
+        .btn-s:hover{
+            background-color: #0A6847;
+            transition: 300ms;
+        }
+        .btn-s{
+            top: 0;
+            left: 0;
+            background-color: #21BF73;
+            color: #fff;
+        }
+        .center{
+            padding: 8px;
+            max-width: 600px;
+            margin: 100px auto;
+            border-radius: 4px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            min-height: 400px;
+        }
+        .btn-group{
+            position: relative;
+          
+            display: flex;
+         
+            height: 4rem;
+        }
+        .gif{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .b-n{
+            width: 100%;
+            padding: 5px;
+        }
+        .success{
+            position: absolute;
+            top: 0;
+          display: none
+        }
+ 
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1>Bm, Me desculpas? 🥹</h1>
+       <div class="gif">
+            <img height="200px" src="https://gifdb.com/images/high/crying-bear-i-am-sorry-ja750r003knx0f7o.gif" alt="">
+       </div>
+        <div class="btn-group">
+           <button class="btn btn-s">Sim 🥰</button>
+           <button class="btn btn-n">Não 😡</button>
+        </div>
+        <div class="success">
+             <img height="600px" src="https://gifdb.com/images/high/happy-happy-joy-joy-498-x-498-gif-27zixvmn6jprdpja.gif" alt="">
+        </div>
+    <script>
+        let i = 1;
+            let randomX = 50 ;
+            let randomY = 50 ;
+        const btn = document.querySelector(".btn-n")
+        btn.addEventListener("mouseover", function () {
+            if (i % 2 == 0) {
+                randomX += 80;
+                randomY += 80;
+            }else{
+                randomX -= 80;
+                randomY -= 80;
+            }
+            btn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+            i++;
+        })
+          const btnSu = document.querySelector(".btn-s")
+          btnSu.addEventListener("click", function() {
+              const su = document.querySelector(".success")
+                su.style.display = "block"          
+          })
+    </script>
+</body>
+</html>
